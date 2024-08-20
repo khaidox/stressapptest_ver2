@@ -722,7 +722,7 @@ Sat::Sat() {
   disk_threads_ = 0;
   total_threads_ = 0;
 
-  use_affinity_ = true;
+  use_affinity_ = false;
   region_mask_ = 0;
   region_count_ = 0;
   for (int i = 0; i < 32; i++) {
@@ -1157,7 +1157,6 @@ void Sat::PrintHelp() {
          " --paddr_base     allocate memory starting from this address\n"
          " --pause_delay    delay (in seconds) between power spikes\n"
          " --pause_duration duration (in seconds) of each pause\n"
-         " --no_affinity    do not set any cpu affinity\n"
          " --local_numa     choose memory regions associated with "
          "each CPU to be tested by that CPU\n"
          " --remote_numa    choose memory regions not associated with "
